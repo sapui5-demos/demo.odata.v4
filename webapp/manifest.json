@@ -1,0 +1,144 @@
+{
+	"_version": "1.8.0",
+	"sap.app": {
+		"id": "sap.training.demo.odata.v4",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "servicecatalog.connectivityComponentForManifest",
+			"version": "0.0.0"
+		},
+		"dataSources": {
+			"demoService": {
+				"uri": "/ODATA_ORG/TripPinRESTierService/(S(sv1mz4tmvvmdy4bxrxry2vke))/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "4.0",
+					"localUri": "localService/metadata.xml"
+				}
+			}
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_hcb",
+			"sap_belize"
+		]
+	},
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "sap.training.demo.odata.v4.view.BindingPaths",
+			"type": "XML"
+		},
+		"dependencies": {
+			"minUI5Version": "1.30.0",
+			"libs": {
+				"sap.ui.layout": {},
+				"sap.ui.core": {},
+				"sap.m": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "sap.training.demo.odata.v4.i18n.i18n"
+				}
+			},
+			"": {
+				"type": "sap.ui.model.odata.v4.ODataModel",
+				"settings": {
+					"synchronizationMode": "None"
+				},
+				"dataSource": "demoService"
+			}
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"async": true,
+				"viewPath": "sap.training.demo.odata.v4.view",
+				"controlAggregation": "pages",
+				"controlId": "idAppControl",
+				"clearControlAggregation": false
+			},
+			"routes": [
+				{
+					"name": "RouteMain",
+					"pattern": "RouteMain",
+					"target": [
+						"TargetMain"
+					]
+				}
+			],
+			"targets": {
+				"TargetMain": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"viewName": "Main",
+					"routerClass": "sap.m.routing.Router",
+					"async": true,
+					"viewPath": "sap.training.demo.odata.v4.view",
+					"controlAggregation": "pages",
+					"controlId": "idAppControl"
+				},
+				"DataFromParentBinding": {
+					"viewType": "XML",
+					"viewName": "DataFromParentBinding",
+					"routerClass": "sap.m.routing.Router",
+					"async": true,
+					"viewPath": "sap.training.demo.odata.v4.view",
+					"controlAggregation": "pages",
+					"controlId": "idAppControl",
+					"clearControlAggregation": false
+				},
+				"DataFromOwnRequest": {
+					"viewType": "XML",
+					"viewName": "DataFromOwnRequest",
+					"routerClass": "sap.m.routing.Router",
+					"async": true,
+					"viewPath": "sap.training.demo.odata.v4.view",
+					"controlAggregation": "pages",
+					"controlId": "idAppControl",
+					"clearControlAggregation": false
+				},
+				"BindingPaths": {
+					"viewType": "XML",
+					"viewName": "BindingPaths"
+				}
+			}
+		}
+	}
+}

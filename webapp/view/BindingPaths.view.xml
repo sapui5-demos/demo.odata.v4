@@ -1,0 +1,42 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	controllerName="sap.training.demo.odata.v4.controller.BindingPaths" xmlns:html="http://www.w3.org/1999/xhtml">
+	<App id="idAppControl">
+		<pages>
+			<Page title="{i18n>bindingPathsPageTitle}" class="sapUiSizeCompact">
+				<content>
+					<Table id="peopleList" items="{/People}">
+						<headerToolbar>
+							<Toolbar>
+								<Title id="PeopleTitle" text="{i18n>peopleListTitle}" titleStyle="H2"/>
+							</Toolbar>
+						</headerToolbar>
+						<columns>
+							<Column id="firstNameColumn">
+								<Text text="{i18n>firstNameLabelText}"/>
+							</Column>
+							<Column id="lastNameColumn">
+								<Text text="{i18n>lastNameLabelText}"/>
+							</Column>
+							<Column id="ageColumn">
+								<Text text="{i18n>ageLabelText}"/>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem>
+								<cells>
+									<Text text="{FirstName}"/>
+								</cells>
+								<cells>
+									<Text text="{LastName}"/>
+								</cells>
+								<cells>
+									<Text text="{Age}"/>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
