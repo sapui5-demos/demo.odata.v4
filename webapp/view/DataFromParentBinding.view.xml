@@ -11,15 +11,15 @@
 								items="{ path: '/People',
 								         parameters: {
 							                             $expand: { Trips: {
-																				$select: ['Name', 'Description', 'StartsAt', 'EndsAt']
-																			}
+																			  $select: ['Name', 'Description', 'StartsAt', 'EndsAt']
+																		    }
 																  }
 													  }
 								       }"
 							>
 								<headerToolbar>
 									<Toolbar>
-										<Title id="PeopleTitle" text="{i18n>peopleListTitle}" titleStyle="H2"/>
+										<Title id="peopleTitle" text="{i18n>peopleListTitle}" titleStyle="H2"/>
 									</Toolbar>
 								</headerToolbar>
 								<columns>
@@ -37,11 +37,7 @@
 									<ColumnListItem>
 										<cells>
 											<Text text="{FirstName}"/>
-										</cells>
-										<cells>
 											<Text text="{LastName}"/>
-										</cells>
-										<cells>
 											<Text text="{Age}"/>
 										</cells>
 									</ColumnListItem>
@@ -50,7 +46,7 @@
 							<Table id="tripList" items="{Trips}" growing="true" growingThreshold="5">
 								<headerToolbar>
 									<Toolbar>
-										<Title id="TripsTitle" text="{i18n>tripListTitle}" titleStyle="H2"/>
+										<Title id="tripsTitle" text="{i18n>tripListTitle}" titleStyle="H2"/>
 									</Toolbar>
 								</headerToolbar>
 								<columns>
@@ -71,14 +67,8 @@
 									<ColumnListItem>
 										<cells>
 											<Text text="{Name}"/>
-										</cells>
-										<cells>
 											<Text text="{Description}"/>
-										</cells>
-										<cells>
 											<Text text="{StartsAt}"/>
-										</cells>
-										<cells>
 											<Text text="{EndsAt}"/>
 										</cells>
 									</ColumnListItem>

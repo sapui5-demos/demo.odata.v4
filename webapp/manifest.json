@@ -46,7 +46,7 @@
 	},
 	"sap.ui5": {
 		"rootView": {
-			"viewName": "sap.training.demo.odata.v4.view.BindingPaths",
+			"viewName": "sap.training.demo.odata.v4.view.Parameters",
 			"type": "XML"
 		},
 		"dependencies": {
@@ -136,7 +136,27 @@
 				},
 				"BindingPaths": {
 					"viewType": "XML",
-					"viewName": "BindingPaths"
+					"viewName": "BindingPaths",
+					"routerClass": "sap.m.routing.Router",
+					"async": true,
+					"viewPath": "sap.training.demo.odata.v4.view",
+					"controlAggregation": "pages",
+					"controlId": "idAppControl",
+					"clearControlAggregation": false
+				},
+				"RefreshSingleEntity": {
+					"viewType": "XML",
+					"viewName": "RefreshSingleEntity",
+					"routerClass": "sap.m.routing.Router",
+					"async": true,
+					"viewPath": "sap.training.demo.odata.v4.view",
+					"controlAggregation": "pages",
+					"controlId": "idAppControl",
+					"clearControlAggregation": false
+				},
+				"Parameters": {
+					"viewType": "XML",
+					"viewName": "Parameters"
 				}
 			}
 		}

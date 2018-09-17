@@ -1,0 +1,51 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	controllerName="sap.training.demo.odata.v4.controller.Parameters" xmlns:html="http://www.w3.org/1999/xhtml">
+		<App id="idAppControl">
+		<pages>
+			<Page title="{i18n>parametersPageTitle}" class="sapUiSizeCompact">
+				<content>
+					<Table id="peopleList"
+						   items="{ path: '/People',
+						            parameters: { 
+						            			  $select: [ 'FirstName', 'LastName', 'Age'],
+						            			  $filter : 'LastName ge \'M\'',
+                								  $orderby : 'LastName asc',
+                								  $expand: { BestFriend: { $select: ['FirstName', 'LastName'] } }
+						            			}
+						           }"
+					>
+						<headerToolbar>
+							<Toolbar>
+								<Title id="peopleTitle" text="{$count} {i18n>peopleListTitle}" titleStyle="H2"/>
+							</Toolbar>
+						</headerToolbar>
+						<columns>
+							<Column id="firstNameColumn">
+								<Text text="{i18n>firstNameLabelText}"/>
+							</Column>
+							<Column id="lastNameColumn">
+								<Text text="{i18n>lastNameLabelText}"/>
+							</Column>
+							<Column id="ageColumn">
+								<Text text="{i18n>ageLabelText}"/>
+							</Column>
+							<Column id="bestFriendColumn">
+								<Text text="{i18n>bestFriendLabelText}"/>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem>
+								<cells>
+									<Text text="{FirstName}"/>
+									<Text text="{LastName}"/>
+									<Text text="{Age}"/>
+									<Text text="{BestFriend/FirstName} {BestFriend/LastName}"/>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

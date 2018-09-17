@@ -7,7 +7,7 @@
 					<Table id="peopleList" items="{/People}">
 						<headerToolbar>
 							<Toolbar>
-								<Title id="PeopleTitle" text="{i18n>peopleListTitle}" titleStyle="H2"/>
+								<Title id="peopleTitle" text="{i18n>peopleListTitle}" titleStyle="H2"/>
 							</Toolbar>
 						</headerToolbar>
 						<columns>
@@ -25,11 +25,7 @@
 							<ColumnListItem>
 								<cells>
 									<Text text="{FirstName}"/>
-								</cells>
-								<cells>
 									<Text text="{LastName}"/>
-								</cells>
-								<cells>
 									<Text text="{Age}"/>
 								</cells>
 							</ColumnListItem>

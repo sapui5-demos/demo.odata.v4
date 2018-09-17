@@ -1,0 +1,69 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
+	controllerName="sap.training.demo.odata.v4.controller.RefreshSingleEntity" xmlns:html="http://www.w3.org/1999/xhtml">
+	<App id="idAppControl">
+		<pages>
+			<Page title="{i18n>refreshEntityPageTitle}" class="sapUiSizeCompact">
+				<content>
+					<l:VerticalLayout>
+						<l:content>
+							<Table id="peopleList1" items="{/People}">
+								<headerToolbar>
+									<Toolbar>
+										<Title id="peopleTitle1" text="{i18n>peopleListTitle}" titleStyle="H2"/>
+									</Toolbar>
+								</headerToolbar>
+								<columns>
+									<Column id="firstNameColumn1">
+										<Text text="{i18n>firstNameLabelText}"/>
+									</Column>
+									<Column id="lastNameColumn1">
+										<Text text="{i18n>lastNameLabelText}"/>
+									</Column>
+									<Column id="ageColumn1">
+										<Text text="{i18n>ageLabelText}"/>
+									</Column>
+								</columns>
+								<items>
+									<ColumnListItem>
+										<cells>
+											<Input value="{FirstName}"/>
+											<Input value="{LastName}"/>
+											<Input value="{Age}"/>
+										</cells>
+									</ColumnListItem>
+								</items>
+							</Table>
+							<Table id="peopleList2" items="{/People}" mode="SingleSelectMaster" selectionChange="onRefreshSelectedPerson">
+								<headerToolbar>
+									<Toolbar>
+										<Title id="peopleTitle2" text="{i18n>peopleListTitle}" titleStyle="H2"/>
+									</Toolbar>
+								</headerToolbar>
+								<columns>
+									<Column id="firstNameColumn2">
+										<Text text="{i18n>firstNameLabelText}"/>
+									</Column>
+									<Column id="lastNameColumn2">
+										<Text text="{i18n>lastNameLabelText}"/>
+									</Column>
+									<Column id="ageColumn2">
+										<Text text="{i18n>ageLabelText}"/>
+									</Column>
+								</columns>
+								<items>
+									<ColumnListItem>
+										<cells>
+											<Text text="{FirstName}"/>
+											<Text text="{LastName}"/>
+											<Text text="{Age}"/>
+										</cells>
+									</ColumnListItem>
+								</items>
+							</Table>
+						</l:content>
+					</l:VerticalLayout>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
