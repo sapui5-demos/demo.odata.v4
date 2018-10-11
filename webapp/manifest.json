@@ -46,7 +46,7 @@
 	},
 	"sap.ui5": {
 		"rootView": {
-			"viewName": "sap.training.demo.odata.v4.view.AutoSelect",
+			"viewName": "sap.training.demo.odata.v4.view.BindingEvents",
 			"type": "XML"
 		},
 		"dependencies": {
@@ -78,9 +78,11 @@
 			}
 		},
 		"resources": {
-			"css": [{
-				"uri": "css/style.css"
-			}]
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
 		},
 		"routing": {
 			"config": {
@@ -92,13 +94,15 @@
 				"controlId": "idAppControl",
 				"clearControlAggregation": false
 			},
-			"routes": [{
-				"name": "RouteMain",
-				"pattern": "RouteMain",
-				"target": [
-					"TargetMain"
-				]
-			}],
+			"routes": [
+				{
+					"name": "RouteMain",
+					"pattern": "RouteMain",
+					"target": [
+						"TargetMain"
+					]
+				}
+			],
 			"targets": {
 				"TargetMain": {
 					"viewType": "XML",
@@ -183,7 +187,17 @@
 				},
 				"AutoSelect": {
 					"viewType": "XML",
-					"viewName": "AutoSelect"
+					"viewName": "AutoSelect",
+					"routerClass": "sap.m.routing.Router",
+					"async": true,
+					"viewPath": "sap.training.demo.odata.v4.view",
+					"controlAggregation": "pages",
+					"controlId": "idAppControl",
+					"clearControlAggregation": false
+				},
+				"BindingEvents": {
+					"viewType": "XML",
+					"viewName": "BindingEvents"
 				}
 			}
 		}

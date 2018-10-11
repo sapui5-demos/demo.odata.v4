@@ -1,0 +1,37 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form"
+	controllerName="sap.training.demo.odata.v4.controller.BindingEvents" xmlns:html="http://www.w3.org/1999/xhtml">
+	<App id="idAppControl">
+		<pages>
+			<Page title="{i18n>bindingEventsPageTitle}" class="sapUiSizeCompact">
+				<content>
+					<l:VerticalLayout>
+						<l:content>
+							<f:SimpleForm layout="GridLayout" editable="true">
+								<f:content>
+									<Label text="{i18n>userNameLabelText}"/>
+									<ComboBox id="users" selectionChange="onUserChange">
+										<items>
+											<core:Item text="angelhuffman"/>
+											<core:Item text="clydeguess"/>
+											<core:Item text="foo"/>
+										</items>
+									</ComboBox>
+								</f:content>
+							</f:SimpleForm>
+							<f:SimpleForm editable="true" id="userData">
+								<f:content>
+									<Label text="{i18n>userNameLabelText}"/>
+									<Text id="userName" text="{UserName}"/>
+									<Label text="{i18n>firstNameLabelText}"/>
+									<Text id="firstName" text="{FirstName}"/>
+									<Label text="{i18n>lastNameLabelText}"/>
+									<Text id="lastName" text="{LastName}"/>
+								</f:content>
+							</f:SimpleForm>
+						</l:content>
+					</l:VerticalLayout>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
