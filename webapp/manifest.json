@@ -46,7 +46,7 @@
 	},
 	"sap.ui5": {
 		"rootView": {
-			"viewName": "sap.training.demo.odata.v4.view.Filtering",
+			"viewName": "sap.training.demo.odata.v4.view.Sorting",
 			"type": "XML"
 		},
 		"dependencies": {
@@ -79,9 +79,11 @@
 			}
 		},
 		"resources": {
-			"css": [{
-				"uri": "css/style.css"
-			}]
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
 		},
 		"routing": {
 			"config": {
@@ -93,13 +95,15 @@
 				"controlId": "idAppControl",
 				"clearControlAggregation": false
 			},
-			"routes": [{
-				"name": "RouteMain",
-				"pattern": "RouteMain",
-				"target": [
-					"TargetMain"
-				]
-			}],
+			"routes": [
+				{
+					"name": "RouteMain",
+					"pattern": "RouteMain",
+					"target": [
+						"TargetMain"
+					]
+				}
+			],
 			"targets": {
 				"TargetMain": {
 					"viewType": "XML",
@@ -204,7 +208,17 @@
 				},
 				"Filtering": {
 					"viewType": "XML",
-					"viewName": "Filtering"
+					"viewName": "Filtering",
+					"routerClass": "sap.m.routing.Router",
+					"async": true,
+					"viewPath": "sap.training.demo.odata.v4.view",
+					"controlAggregation": "pages",
+					"controlId": "idAppControl",
+					"clearControlAggregation": false
+				},
+				"Sorting": {
+					"viewType": "XML",
+					"viewName": "Sorting"
 				}
 			}
 		}
