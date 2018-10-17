@@ -1,0 +1,77 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form"
+	controllerName="sap.training.demo.odata.v4.controller.ODataOperations" xmlns:html="http://www.w3.org/1999/xhtml">
+	<App id="idAppControl">
+		<pages>
+			<Page title="{i18n>operationsPageTitle}" class="sapUiSizeCompact">
+				<content>
+					<f:SimpleForm binding="{/GetPersonWithMostFriends()}">
+						<f:content>
+							<Label text="{i18n>firstNameLabelText}"/>
+							<Text text="{FirstName}"/>
+							<Label text="{i18n>lastNameLabelText}"/>
+							<Text text="{LastName}"/>
+						</f:content>
+						<f:title>
+							<core:Title text="{i18n>simpleFuncBindingFormTitle}"/>
+						</f:title>
+					</f:SimpleForm>
+					<f:SimpleForm id="nearestAirport" binding="{/GetNearestAirport(...)}" editable="true">
+						<f:content>
+							<Label text="{i18n>latitudeLabelText}"/>
+							<Input id="latitude"/>
+							<Label text="{i18n>longitudeLabelText}"/>
+							<Input id="longitude"/>
+							<Label text=""/>
+							<Button text="{i18n>callFuncButtonText}" press="onGetNearestAirport"/>
+							<Label text="{i18n>airpNameLabelText}"/>
+							<Text text="{Name}"/>
+						</f:content>
+						<f:title>
+							<core:Title text="{i18n>defFuncBindingFormTitle}"/>
+						</f:title>
+					</f:SimpleForm>
+					<f:SimpleForm id="reset" binding="{/ResetDataSource(...)}">
+						<f:content>
+							<Button text="{i18n>resetButtonText}" press="onReset"/>
+						</f:content>
+						<f:title>
+							<core:Title text="{i18n>actionBindingFormTitle}"/>
+						</f:title>
+					</f:SimpleForm>
+					<Panel headerText="{i18n>boundFunctionPanelHeader}">
+						<content>
+							<Table id="peopleList" mode="SingleSelectMaster" selectionChange="onGetFavoriteAirline" growing="true" growingThreshold="5"
+								items="{model2>/People}">
+								<headerToolbar>
+									<Toolbar>
+										<Title id="peopleTitle" text="{i18n>peopleListTitle}" titleStyle="H2"/>
+									</Toolbar>
+								</headerToolbar>
+								<columns>
+									<Column id="firstNameColumn">
+										<Text text="{i18n>firstNameLabelText}"/>
+									</Column>
+									<Column id="lastNameColumn">
+										<Text text="{i18n>lastNameLabelText}"/>
+									</Column>
+									<Column id="userNameColumn">
+										<Text text="{i18n>userNameLabelText}"/>
+									</Column>
+								</columns>
+								<items>
+									<ColumnListItem>
+										<cells>
+											<Text text="{model2>FirstName}"/>
+											<Text text="{model2>LastName}"/>
+											<Text text="{model2>UserName}"/>
+										</cells>
+									</ColumnListItem>
+								</items>
+							</Table>
+						</content>
+					</Panel>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

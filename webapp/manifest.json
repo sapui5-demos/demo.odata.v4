@@ -14,12 +14,20 @@
 			"version": "0.0.0"
 		},
 		"dataSources": {
-			"demoService": {
-				"uri": "/ODATA_ORG/TripPinRESTierService/(S(sv1mz4tmvvmdy4bxrxry2vke))/",
+			"DemoService": {
+				"uri": "/ODATA_ORG/TripPinRESTierService/(S(rwinhvwthfzboyityvjdg1eu))/",
 				"type": "OData",
 				"settings": {
 					"odataVersion": "4.0",
 					"localUri": "localService/metadata.xml"
+				}
+			},
+			"TripPinService": {
+				"uri": "/ODATA_ORG/V4/TripPinService/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "4.0",
+					"localUri": "localService/TripPinService/metadata.xml"
 				}
 			}
 		}
@@ -46,7 +54,7 @@
 	},
 	"sap.ui5": {
 		"rootView": {
-			"viewName": "sap.training.demo.odata.v4.view.Sorting",
+			"viewName": "sap.training.demo.odata.v4.view.ODataOperations",
 			"type": "XML"
 		},
 		"dependencies": {
@@ -75,15 +83,22 @@
 					"synchronizationMode": "None",
 					"operationMode": "Server"
 				},
-				"dataSource": "demoService"
+				"dataSource": "DemoService"
+			},
+			"model2": {
+				"type": "sap.ui.model.odata.v4.ODataModel",
+				"settings": {
+					"synchronizationMode": "None",
+					"operationMode": "Server",
+					"groupId": "$direct"
+				},
+				"dataSource": "TripPinService"
 			}
 		},
 		"resources": {
-			"css": [
-				{
-					"uri": "css/style.css"
-				}
-			]
+			"css": [{
+				"uri": "css/style.css"
+			}]
 		},
 		"routing": {
 			"config": {
@@ -95,15 +110,13 @@
 				"controlId": "idAppControl",
 				"clearControlAggregation": false
 			},
-			"routes": [
-				{
-					"name": "RouteMain",
-					"pattern": "RouteMain",
-					"target": [
-						"TargetMain"
-					]
-				}
-			],
+			"routes": [{
+				"name": "RouteMain",
+				"pattern": "RouteMain",
+				"target": [
+					"TargetMain"
+				]
+			}],
 			"targets": {
 				"TargetMain": {
 					"viewType": "XML",
@@ -218,7 +231,27 @@
 				},
 				"Sorting": {
 					"viewType": "XML",
-					"viewName": "Sorting"
+					"viewName": "Sorting",
+					"routerClass": "sap.m.routing.Router",
+					"async": true,
+					"viewPath": "sap.training.demo.odata.v4.view",
+					"controlAggregation": "pages",
+					"controlId": "idAppControl",
+					"clearControlAggregation": false
+				},
+				"ODataOperations": {
+					"viewType": "XML",
+					"viewName": "ODataOperations",
+					"routerClass": "sap.m.routing.Router",
+					"async": true,
+					"viewPath": "sap.training.demo.odata.v4.view",
+					"controlAggregation": "pages",
+					"controlId": "idAppControl",
+					"clearControlAggregation": false
+				},
+				"SimpleFunctionBinding": {
+					"viewType": "XML",
+					"viewName": "SimpleFunctionBinding"
 				}
 			}
 		}
