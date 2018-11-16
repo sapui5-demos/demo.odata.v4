@@ -6,14 +6,14 @@ sap.ui.define([
 
 	return Controller.extend("sap.training.demo.odata.v4.controller.BatchControl", {
 
-		onCancelPerson: function (oEvent) {
-			this.getView().getModel().resetChanges("PersonUpdateGroup");
-		},
-
 		onSavePerson: function (oEvent) {
 			this.getView().getModel().submitBatch("PersonUpdateGroup");
 		},
-
+		
+		onCancelPerson: function (oEvent) {
+			this.getView().getModel().resetChanges("PersonUpdateGroup");
+		},
+		
 		onShowPerson: function (oEvent) {
 			this.getView().getModel().submitBatch("PersonReadGroup");
 		},

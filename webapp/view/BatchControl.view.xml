@@ -1,3 +1,4 @@
+
 <mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form"
 	controllerName="sap.training.demo.odata.v4.controller.BatchControl" xmlns:html="http://www.w3.org/1999/xhtml">
 	<App id="idAppControl">
@@ -59,8 +60,8 @@
 								<content>
 									<Title id="applGrpIdUpdateTitle" text="$$updateGroupId: 'PersonUpdateGroup'"/>
 									<ToolbarSpacer/>
-									<Button icon="sap-icon://save" press="onSavePerson"/>
 									<Button icon="sap-icon://sys-cancel-2" press="onCancelPerson"/>
+									<Button icon="sap-icon://save" press="onSavePerson"/>
 								</content>
 							</Toolbar>
 						</f:toolbar>
