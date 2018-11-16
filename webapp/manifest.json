@@ -54,7 +54,7 @@
 	},
 	"sap.ui5": {
 		"rootView": {
-			"viewName": "sap.training.demo.odata.v4.view.ODataOperations",
+			"viewName": "sap.training.demo.odata.v4.view.BatchControl",
 			"type": "XML"
 		},
 		"dependencies": {
@@ -96,9 +96,11 @@
 			}
 		},
 		"resources": {
-			"css": [{
-				"uri": "css/style.css"
-			}]
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
 		},
 		"routing": {
 			"config": {
@@ -110,13 +112,15 @@
 				"controlId": "idAppControl",
 				"clearControlAggregation": false
 			},
-			"routes": [{
-				"name": "RouteMain",
-				"pattern": "RouteMain",
-				"target": [
-					"TargetMain"
-				]
-			}],
+			"routes": [
+				{
+					"name": "RouteMain",
+					"pattern": "RouteMain",
+					"target": [
+						"TargetMain"
+					]
+				}
+			],
 			"targets": {
 				"TargetMain": {
 					"viewType": "XML",
@@ -252,6 +256,10 @@
 				"SimpleFunctionBinding": {
 					"viewType": "XML",
 					"viewName": "SimpleFunctionBinding"
+				},
+				"BatchControl": {
+					"viewType": "XML",
+					"viewName": "BatchControl"
 				}
 			}
 		}

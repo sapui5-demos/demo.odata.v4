@@ -1,0 +1,72 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form"
+	controllerName="sap.training.demo.odata.v4.controller.BatchControl" xmlns:html="http://www.w3.org/1999/xhtml">
+	<App id="idAppControl">
+		<pages>
+			<Page title="{i18n>batchControlPageTitle}" class="sapUiSizeCompact">
+				<content>
+					<f:SimpleForm
+						binding="{path: '/People(\'javieralfred\')', parameters: {$$groupId: 'PersonReadGroup'} }"
+						editable="true">
+						<Label text="{i18n>firstNameLabelText}"/>
+						<Input value="{FirstName}"/>
+						<Label text="{i18n>lastNameLabelText}"/>
+						<Input value="{LastName}"/>
+						<f:toolbar>
+							<Toolbar ariaLabelledBy="applGrpIdReadTitle">
+								<content>
+									<Title id="applGrpIdReadTitle" text="$$groupId: 'PersonReadGroup'"/>
+									<ToolbarSpacer/>
+									<Button icon="sap-icon://show" press="onShowPerson"/>
+								</content>
+							</Toolbar>
+						</f:toolbar>
+					</f:SimpleForm>
+					<f:SimpleForm binding="{path: '/People(\'russellwhyte\')', parameters: {$$updateGroupId: '$auto', $$groupId: '$auto'} }" editable="true">
+						<Label text="{i18n>firstNameLabelText}"/>
+						<Input value="{FirstName}"/>
+						<Label text="{i18n>lastNameLabelText}"/>
+						<Input value="{LastName}"/>
+						<f:toolbar>
+							<Toolbar ariaLabelledBy="autoTitle">
+								<content>
+									<Title id="autoTitle" text="$$updateGroupId: '$auto', $$groupId: '$auto'"/>
+								</content>
+							</Toolbar>
+						</f:toolbar>
+					</f:SimpleForm>
+					<f:SimpleForm binding="{path: '/People(\'clydeguess\')', parameters: {$$updateGroupId: '$direct', $$groupId: '$direct'} }" editable="true">
+						<Label text="{i18n>firstNameLabelText}"/>
+						<Input value="{FirstName}"/>
+						<Label text="{i18n>lastNameLabelText}"/>
+						<Input value="{LastName}"/>
+						<f:toolbar>
+							<Toolbar ariaLabelledBy="directTitle">
+								<content>
+									<Title id="directTitle" text="$$updateGroupId: '$direct', $$groupId: '$direct'"/>
+								</content>
+							</Toolbar>
+						</f:toolbar>
+					</f:SimpleForm>
+					<f:SimpleForm
+						binding="{path: '/People(\'willieashmore\')', parameters: {$$updateGroupId: 'PersonUpdateGroup'} }"
+						editable="true">
+						<Label text="{i18n>firstNameLabelText}"/>
+						<Input value="{FirstName}"/>
+						<Label text="{i18n>lastNameLabelText}"/>
+						<Input value="{LastName}"/>
+						<f:toolbar>
+							<Toolbar ariaLabelledBy="applGrpIdUpdateTitle">
+								<content>
+									<Title id="applGrpIdUpdateTitle" text="$$updateGroupId: 'PersonUpdateGroup'"/>
+									<ToolbarSpacer/>
+									<Button icon="sap-icon://save" press="onSavePerson"/>
+									<Button icon="sap-icon://sys-cancel-2" press="onCancelPerson"/>
+								</content>
+							</Toolbar>
+						</f:toolbar>
+					</f:SimpleForm>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
