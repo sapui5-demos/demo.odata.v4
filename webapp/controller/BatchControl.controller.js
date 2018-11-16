@@ -17,7 +17,7 @@ sap.ui.define([
 		onShowPerson: function (oEvent) {
 			this.getView().getModel().submitBatch("PersonReadGroup");
 		},
-
+ 
 	});
 
 });

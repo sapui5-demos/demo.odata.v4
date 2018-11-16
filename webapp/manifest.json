@@ -29,7 +29,7 @@
 					"odataVersion": "4.0",
 					"localUri": "localService/TripPinService/metadata.xml"
 				}
-			}
+			} 
 		}
 	},
 	"sap.ui": {
