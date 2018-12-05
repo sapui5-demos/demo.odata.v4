@@ -29,7 +29,7 @@
 					"odataVersion": "4.0",
 					"localUri": "localService/TripPinService/metadata.xml"
 				}
-			} 
+			}
 		}
 	},
 	"sap.ui": {
@@ -54,7 +54,7 @@
 	},
 	"sap.ui5": {
 		"rootView": {
-			"viewName": "sap.training.demo.odata.v4.view.BatchControl",
+			"viewName": "sap.training.demo.odata.v4.view.CreateDeleteEntity",
 			"type": "XML"
 		},
 		"dependencies": {
@@ -260,6 +260,14 @@
 				"BatchControl": {
 					"viewType": "XML",
 					"viewName": "BatchControl"
+				},
+				"MetaModel": {
+					"viewType": "XML",
+					"viewName": "MetaModel"
+				},
+				"CreateDeleteEntity": {
+					"viewType": "XML",
+					"viewName": "CreateDeleteEntity"
 				}
 			}
 		}
