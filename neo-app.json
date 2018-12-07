@@ -26,6 +26,15 @@
         "name": "ODATA_ORG"
       },
       "description": "OData Reference Services"
+    },
+    {
+      "path": "/sap/opu/odata",
+      "target": {
+        "type": "destination",
+        "name": "FSD_100",
+        "entryPath": "/sap/opu/odata"
+      },
+      "description": "FSD"
     }
   ],
   "sendWelcomeFileRedirect": true

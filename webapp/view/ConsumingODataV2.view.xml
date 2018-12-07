@@ -1,0 +1,35 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	controllerName="sap.training.demo.odata.v4.controller.ConsumingODataV2" xmlns:html="http://www.w3.org/1999/xhtml">
+	<App id="idAppControl">
+		<pages>
+			<Page title="{i18n>consumingODataV2PageTitle}" class="sapUiSizeCompact">
+				<content>
+					<Table id="carrierList"
+						items="{path: 'odatav2>/ZBC_C_Carrier_TP', parameters: {$select: ['Carrname', 'Url'], $filter: 'Carrname ge \'L\'' , $orderby: 'Carrname desc'} }">
+						<headerToolbar>
+							<Toolbar>
+								<Title id="carrierTitle" text="{i18n>carrierListTitle}" titleStyle="H2"/>
+							</Toolbar>
+						</headerToolbar>
+						<columns>
+							<Column id="carrierNameColumn">
+								<Text text="{i18n>carrierNameLabelText}"/>
+							</Column>
+							<Column id="urlColumn">
+								<Text text="{i18n>urlLabelText}"/>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem>
+								<cells>
+									<Text text="{odatav2>Carrname}"/>
+									<Text text="{odatav2>Url}"/>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

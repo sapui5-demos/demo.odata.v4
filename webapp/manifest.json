@@ -29,6 +29,14 @@
 					"odataVersion": "4.0",
 					"localUri": "localService/TripPinService/metadata.xml"
 				}
+			},
+			"ODataV2": {
+				"uri": "/sap/opu/odata/sap/ZTRAVEL_SRV/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/ODataV2/metadata.xml"
+				}
 			}
 		}
 	},
@@ -54,11 +62,11 @@
 	},
 	"sap.ui5": {
 		"rootView": {
-			"viewName": "sap.training.demo.odata.v4.view.CreateDeleteEntity",
+			"viewName": "sap.training.demo.odata.v4.view.ConsumingODataV2",
 			"type": "XML"
 		},
 		"dependencies": {
-			"minUI5Version": "1.30.0",
+			"minUI5Version": "1.49",
 			"libs": {
 				"sap.ui.layout": {},
 				"sap.ui.core": {},
@@ -93,14 +101,21 @@
 					"groupId": "$direct"
 				},
 				"dataSource": "TripPinService"
+			},
+			"odatav2": {
+				"dataSource": "ODataV2",
+				"settings": {
+					"autoExpandSelect": false,
+					"operationMode": "Server",
+					"synchronizationMode": "None"
+				},
+				"type": "sap.ui.model.odata.v4.ODataModel"
 			}
 		},
 		"resources": {
-			"css": [
-				{
-					"uri": "css/style.css"
-				}
-			]
+			"css": [{
+				"uri": "css/style.css"
+			}]
 		},
 		"routing": {
 			"config": {
@@ -112,15 +127,13 @@
 				"controlId": "idAppControl",
 				"clearControlAggregation": false
 			},
-			"routes": [
-				{
-					"name": "RouteMain",
-					"pattern": "RouteMain",
-					"target": [
-						"TargetMain"
-					]
-				}
-			],
+			"routes": [{
+				"name": "RouteMain",
+				"pattern": "RouteMain",
+				"target": [
+					"TargetMain"
+				]
+			}],
 			"targets": {
 				"TargetMain": {
 					"viewType": "XML",
@@ -268,6 +281,10 @@
 				"CreateDeleteEntity": {
 					"viewType": "XML",
 					"viewName": "CreateDeleteEntity"
+				},
+				"ConsumingODataV2": {
+					"viewType": "XML",
+					"viewName": "ConsumingODataV2"
 				}
 			}
 		}
